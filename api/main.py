@@ -24,7 +24,7 @@ def clean_df(df):
     return df.where(pd.notnull(df), None)
 
 
-# ─── ROUTES GÉNÉRALES ────────────────────────────────────────────────────────
+#ROUTES GÉNÉRALES
 
 @app.get("/")
 def root():
@@ -45,7 +45,7 @@ def stats():
     }
 
 
-# ─── ROUTES RÉGIMES ──────────────────────────────────────────────────────────
+#ROUTES RÉGIMES
 
 @app.get("/diets/filter")
 def filter_by_diet(
@@ -78,7 +78,7 @@ def nutriscore_by_diet():
     return result
 
 
-# ─── ROUTES NUTRIMENTS ───────────────────────────────────────────────────────
+#ROUTES NUTRIMENTS
 
 @app.get("/nutrients/filter")
 def filter_by_nutrients(
@@ -116,7 +116,7 @@ def top_proteins(
     return clean_df(df.head(limit))[["code", "product_name", "brands", "proteins", "energy_kcal"]].to_dict(orient="records")
 
 
-# ─── ROUTES ACCESSIBILITÉ ────────────────────────────────────────────────────
+#ROUTES ACCESSIBILITÉ
 
 @app.get("/accessibility/countries")
 def by_country():
@@ -136,7 +136,7 @@ def by_nutriscore(
     return clean_df(df.head(limit)).to_dict(orient="records")
 
 
-# ─── ROUTE RECOMMANDATIONS ───────────────────────────────────────────────────
+#ROUTE RECOMMANDATIONS
 
 @app.get("/recommendations")
 def recommendations(
@@ -166,7 +166,7 @@ def recommendations(
     return clean_df(df.head(limit)).to_dict(orient="records")
 
 
-# ─── ROUTE RECHERCHE ─────────────────────────────────────────────────────────
+#ROUTE RECHERCHE
 
 @app.get("/search")
 def search(
