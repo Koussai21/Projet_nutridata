@@ -11,6 +11,11 @@ Objectif : Créer un dashboard et une API pour répondre à la problématique :
 
 Le cluster Hadoop/Spark tourne dans un environnement Docker basé sur le projet [Marcel-Jan/docker-hadoop-spark](https://github.com/Marcel-Jan/docker-hadoop-spark). L'ensemble des commandes PySpark sont exécutées directement dans le container `spark-master`.
 
+Dataset utilisé pour le projet : [Openfoodfacts - Hugginface](https://huggingface.co/datasets/openfoodfacts/product-database)
+Lien de téléchargement : [Download_link](https://huggingface.co/datasets/openfoodfacts/product-database/resolve/main/food.parquet?download=true)
+
+Pour la vidéo youtube capturée dans le cadre de ce projet nous avons préalablement uploadé le dataset dans HDFS dans la mesure où food.parquet est un fichier pesant 7Go.
+
 Lancement du container :
 
 ```bash
